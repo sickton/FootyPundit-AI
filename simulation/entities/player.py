@@ -21,3 +21,26 @@ class Player:
 
         self.stamina = 100
         self.has_ball = False
+
+    def is_goalkeeper(self):
+        return self.position == "GK"
+
+    def attribute_vector(self):
+        return {
+            "pace": self.pace,
+            "shooting": self.shooting,
+            "passing": self.passing,
+            "dribbling": self.dribbling,
+            "defending": self.defending,
+            "physicality": self.physicality,
+            "attacking_positioning": self.attacking_positioning,
+            "defensive_positioning": self.defensive_positioning,
+            "diving": self.diving,
+            "handling": self.handling,
+            "kicking": self.kicking,
+            "reflexes": self.reflexes,
+            "goalkeeper_positioning": self.goalkeeper_positioning
+        }
+
+    def __repr__(self):
+        return f"<Player - {self.name} ({self.position} | OVR {self.overall})"
